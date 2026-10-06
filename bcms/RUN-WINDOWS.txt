@@ -1,0 +1,17 @@
+BAIDYANATH COLLEGE OF MEDICAL SCIENCE - FRONTEND
+
+1. Install Node.js 20+ if needed.
+2. Extract this ZIP.
+3. Open the project folder in VS Code.
+4. Open Terminal and run:
+
+   npm install
+   npm run dev
+
+5. Open:
+   http://localhost:3000
+
+Or double-click start-dev.bat after Node.js is installed.
+
+This is FRONTEND ONLY.
+No Supabase, database, admin panel, authentication or backend is included in this phase.

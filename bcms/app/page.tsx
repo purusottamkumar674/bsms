@@ -1,0 +1,37 @@
+import Link from "next/link";
+import { ArrowRight, BookOpen, Microscope, HeartPulse, Library, Building2, Bus, Wifi, ShieldCheck, Trophy, UsersRound, Stethoscope } from "lucide-react";
+import HomeHero from "@/components/HomeHero";
+import SectionHeading from "@/components/SectionHeading";
+import StatStrip from "@/components/StatStrip";
+import CourseCard from "@/components/CourseCard";
+import DepartmentCard from "@/components/DepartmentCard";
+import FacultyCard from "@/components/FacultyCard";
+import NoticeList from "@/components/NoticeList";
+import NewsCard from "@/components/NewsCard";
+import VideoClient from "@/components/VideoClient";
+import { courses } from "@/data/courses";
+import { departments } from "@/data/departments";
+import { faculty } from "@/data/faculty";
+import { news } from "@/data/news";
+
+const facilities=[
+ {title:"Smart Classrooms",copy:"Technology-enabled spaces for focused academic learning.",icon:BookOpen},
+ {title:"Advanced Laboratories",copy:"Practical learning environments designed for medical sciences.",icon:Microscope},
+ {title:"Clinical Learning",copy:"Structured exposure to patient-care settings and healthcare systems.",icon:HeartPulse},
+ {title:"Central Library",copy:"Quiet reading, journals, references and digital learning resources.",icon:Library},
+ {title:"Hostel & Campus",copy:"Student-focused residential and campus support facilities.",icon:Building2},
+ {title:"Transport",copy:"Convenient campus transport support for students and staff.",icon:Bus},
+];
+export default function Home(){return <>
+<HomeHero/>
+<section className="relative z-10 -mt-7"><div className="container-site"><StatStrip/></div></section>
+<section className="section-pad"><div className="container-site grid items-center gap-10 lg:grid-cols-2"><div><SectionHeading kicker="About BCMS" title="A focused environment for medical learning and professional growth" copy="Baidyanath College of Medical Science is presented here as a premium frontend concept for a modern medical institution. Verified official information can be connected later through the backend without redesigning this interface."/><div className="grid grid-cols-2 gap-3">{[["Student First",UsersRound],["Clinical Focus",Stethoscope],["Safe Campus",ShieldCheck],["Growth & Activities",Trophy]].map(([t,I]:any)=><div key={t} className="rounded-2xl bg-skysoft p-4"><I className="mb-2 text-blue" size={21}/><b className="text-sm text-navy">{t}</b></div>)}</div><Link href="/about" className="btn-primary mt-6">Know More <ArrowRight size={16}/></Link></div><div className="relative"><img src="/learning.png" alt="College campus learning" className="h-[430px] w-full rounded-[2rem] object-cover shadow-soft"/><div className="absolute -bottom-5 -left-4 max-w-xs rounded-2xl bg-navy p-5 text-white shadow-xl sm:-left-7"><div className="text-xs font-bold uppercase tracking-[.15em] text-blue-200">Learning Environment</div><div className="mt-1 text-xl font-black">Academic excellence with practical exposure</div></div></div></div></section>
+<section className="section-pad bg-slate-50"><div className="container-site"><SectionHeading kicker="Academics" title="Explore our courses" copy="Sample frontend course data is separated from UI components and can later be replaced by API or Supabase data."/><div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">{courses.map(c=><CourseCard key={c.slug} course={c}/>)}</div><div className="mt-8 text-center"><Link href="/courses" className="btn-secondary">View All Courses <ArrowRight size={16}/></Link></div></div></section>
+<section className="section-pad"><div className="container-site"><SectionHeading kicker="Departments" title="Medical departments" copy="Browse a frontend-ready directory designed to scale into dynamic department pages later."/><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{departments.slice(0,8).map(d=><DepartmentCard key={d.slug} department={d}/>)}</div><div className="mt-8"><Link href="/departments" className="btn-secondary">All Departments <ArrowRight size={16}/></Link></div></div></section>
+<section className="section-pad bg-gradient-to-br from-navy to-blue text-white"><div className="container-site"><div className="mb-10 max-w-3xl"><div className="mb-2 text-xs font-black uppercase tracking-[.22em] text-blue-200">Campus Facilities</div><h2 className="text-3xl font-black md:text-4xl">Designed around learning, safety and student experience</h2></div><div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">{facilities.map(({title,copy,icon:Icon})=><div key={title} className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur"><Icon className="mb-4 text-blue-200"/><h3 className="font-black">{title}</h3><p className="mt-2 text-sm leading-6 text-blue-100">{copy}</p></div>)}</div></div></section>
+<section className="section-pad"><div className="container-site"><SectionHeading kicker="Faculty" title="Meet our faculty" copy="Sample faculty profiles demonstrate the final card and filtering-ready structure."/><div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{faculty.slice(0,4).map(f=><FacultyCard key={f.name} person={f}/>)}</div></div></section>
+<section className="section-pad bg-slate-50"><div className="container-site grid gap-10 lg:grid-cols-[1.1fr_.9fr]"><div><SectionHeading kicker="Notices" title="Latest notices & circulars"/><NoticeList limit={3}/><Link href="/notices" className="btn-secondary mt-5">View Notice Board <ArrowRight size={16}/></Link></div><div><SectionHeading kicker="Clinical Training" title="Learning beyond the classroom" copy="A dedicated clinical section can later display verified OPD/IPD statistics, department information and hospital media from the backend."/><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=85" alt="Hospital clinical learning" className="h-72 w-full rounded-2xl object-cover shadow-soft"/><Link href="/hospital-clinical-training" className="btn-primary mt-5">Explore Clinical Training <ArrowRight size={16}/></Link></div></div></section>
+<section className="section-pad"><div className="container-site"><SectionHeading kicker="News & Events" title="Campus updates"/><div className="grid gap-6 md:grid-cols-3">{news.map(n=><NewsCard key={n.id} item={n}/>)}</div></div></section>
+<section className="section-pad bg-slate-50"><div className="container-site"><SectionHeading kicker="Video Gallery" title="See the campus in motion" copy="Video cards open inside a modal and are ready for future YouTube, Vimeo or direct-video data."/><VideoClient/></div></section>
+<section className="section-pad"><div className="container-site"><div className="overflow-hidden rounded-[2rem] bg-gradient-to-r from-navy to-blue p-8 text-white shadow-soft md:p-12"><div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]"><div><div className="text-xs font-black uppercase tracking-[.2em] text-blue-200">Admissions</div><h2 className="mt-2 text-3xl font-black md:text-4xl">Start your journey with Baidyanath College of Medical Science</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-blue-100">Explore eligibility, courses and the frontend online application experience. Backend submission can be connected in Phase 2.</p></div><div className="flex flex-wrap gap-3"><Link href="/admissions" className="btn-secondary bg-white">Admission Details</Link><Link href="/online-application" className="btn-primary border border-white/20">Apply Online</Link></div></div></div></div></section>
+</>}

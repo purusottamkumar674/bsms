@@ -1,0 +1,7 @@
+import SimpleInfoPage from "@/components/SimpleInfoPage";
+export const metadata={title:"About College"};
+export default function Page(){return <SimpleInfoPage title="About Baidyanath College of Medical Science" subtitle="Discover the institution, learning environment and educational philosophy behind BCMS." intro="This frontend presents a modern institutional profile with dedicated spaces for verified history, achievements and official college information that can later be managed from the backend." image="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=80" sections={[
+{title:"Our Institution",copy:"A student-focused medical education environment built around academic discipline, practical learning and responsible healthcare values.",points:["Modern academic environment","Student support","Professional development","Clinical orientation"],image:"/learning.png"},
+{title:"Our History",copy:"This area is intentionally structured for the college's verified establishment story, milestones and institutional journey. Official dates should be added only after verification.",points:["Foundation timeline","Academic milestones","Campus development","Community initiatives"]},
+{title:"Learning Philosophy",copy:"Education should connect strong conceptual foundations with laboratory work, communication skills, clinical exposure and ethical professional practice.",image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80"}
+]}/>}

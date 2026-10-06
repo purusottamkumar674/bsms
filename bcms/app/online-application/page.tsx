@@ -1,0 +1,5 @@
+import PageHero from "@/components/PageHero";
+import DemoForm from "@/components/DemoForm";
+import { FileText, UserRound, GraduationCap, ClipboardCheck } from "lucide-react";
+export const metadata={title:"Online Application"};
+export default function Page(){return <><PageHero title="Online Application Form" subtitle="Complete the frontend admission form. Server submission will be connected in Phase 2."/><section className="section-pad bg-slate-50"><div className="container-site"><div className="mx-auto mb-8 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-4">{[[UserRound,"Personal Details"],[GraduationCap,"Academic Details"],[FileText,"Documents"],[ClipboardCheck,"Review"]].map(([I,t]:any,i)=><div key={t} className="rounded-2xl bg-white p-4 text-center shadow-sm"><div className="mx-auto mb-2 grid size-9 place-items-center rounded-full bg-skysoft text-blue"><I size={18}/></div><div className="text-xs font-bold text-navy">{i+1}. {t}</div></div>)}</div><div className="mx-auto max-w-5xl"><DemoForm application/></div></div></section></>}

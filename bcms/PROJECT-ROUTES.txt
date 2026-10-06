@@ -1,0 +1,31 @@
+Main routes
+/
+/about
+/vision-mission
+/chairman-message
+/principal-message
+/courses
+/departments
+/faculty
+/admissions
+/online-application
+/eligibility-fees
+/scholarships
+/academic-calendar
+/facilities
+/hospital-clinical-training
+/library
+/laboratories
+/hostel
+/student-life
+/photo-gallery
+/video-gallery
+/news-events
+/notices
+/mandatory-disclosure
+/contact
+
+Extra utility/detail routes
+/search
+/courses/[slug]
+/departments/[slug]

@@ -1,0 +1,5 @@
+import PageHero from "@/components/PageHero";
+import SectionHeading from "@/components/SectionHeading";
+import NoticeList from "@/components/NoticeList";
+export const metadata={title:"Notices & Circulars"};
+export default function Page(){return <><PageHero title="Notices & Circulars" subtitle="A clean notice board for academic, admission, general and event-related updates."/><section className="section-pad"><div className="container-site"><SectionHeading kicker="Notice Board" title="Important updates in one place" copy="Search and filter controls are frontend-ready. PDF documents can be connected to real file storage in Phase 2."/><div className="mb-6 grid gap-3 md:grid-cols-3"><input placeholder="Search notices..." className="rounded-xl border border-slate-200 px-4 py-3 text-sm"/><select className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm"><option>All Categories</option><option>Admissions</option><option>Academic</option><option>General</option></select><input type="date" className="rounded-xl border border-slate-200 px-4 py-3 text-sm"/></div><NoticeList/></div></section></>}
